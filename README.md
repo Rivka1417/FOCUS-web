@@ -19,4 +19,8 @@ A web-based platform for concentration and thinking games. The project features 
 2. Navigate to the `html` folder and open `login.html` in any modern web browser.
 3. Register a new user, log in, and navigate to the game lobby to start playing.
 
+## Credits
+This project was collaboratively developed by [Rivka](https://github.com/Rivka1417) and [Sara](https://github.com/sar1212
+).
+
 **Note:** The application's user interface and game content are currently in Hebrew.

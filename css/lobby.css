@@ -1,0 +1,303 @@
+
+        .logout-btn {
+            background-color: #4a7c70;
+            color: #fdfcf0;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin: 4vh;
+        }
+
+        .logout-btn:hover {
+            background-color: #4a4e69;
+            transform: scale(1.05);
+        }
+
+        .main-footer {
+            background-color: #4a4e69;
+            color: #fdfcf0;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        
+        .lobby-container {
+            max-width: 1200px;
+            margin: 2vh auto;
+            padding: 0 2vw;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .lobby-title {
+            font-size: 2.2rem;
+            color: #4a4e69;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .lobby-subtitle {
+            font-size: 1rem;
+            color: #4a7c70;
+            margin-bottom: 25px;
+        }
+
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 25px;
+            padding-bottom: 3vh;
+        }
+
+        
+        .game-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(74, 124, 112, 0.2);
+        }
+
+        
+        .game-preview {
+            height: 140px;
+            background: radial-gradient(#4a7c70, #4a4e69);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-info {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+            background: #fff;
+        }
+
+        .game-name {
+            font-size: 1.25rem;
+            margin: 0 0 5px 0;
+            color: #4a4e69;
+            font-weight: bold;
+        }
+
+        
+        .focus-quote {
+            font-size: 0.85rem;
+            color: #4a7c70;
+            font-style: italic;
+            margin: 10px 0 0 0;
+            padding-top: 8px;
+            border-top: dashed 1px #ddd;
+            line-height: 1.4;
+        }
+
+       
+        .status-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(230, 126, 34, 0.9);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .status-badge.ready {
+            background: #2ec4b6;
+        }
+
+
+        .target-ring {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        .target-dot {
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .game-card:hover .target-ring {
+            transform: scale(1.2);
+            border-color: #2ec4b6;
+            box-shadow: 0 0 20px rgba(46, 196, 182, 0.6);
+        }
+
+        
+        .game-preview.mario-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background: radial-gradient(#4a7c70, #4a4e69);
+            overflow: hidden;
+            height: 140px;
+        }
+
+        
+        .pipe-img {
+            width: 40px;
+            height: auto;
+            position: absolute;
+            bottom: 12px;
+            z-index: 2; 
+        }
+
+        
+        .mario-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            position: absolute;
+            bottom: 22px;
+            z-index: 1; 
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(25px); 
+        }
+
+
+        .game-card:hover .mario-img {
+            animation: marioJumpOut 0.6s infinite alternate;
+        }
+
+        .game-card:hover .mario-coin {
+            transform: translateY(-10px) scale(1.2);
+            opacity: 1;
+            box-shadow: 0 0 15px #ffd700;
+        }
+
+        @keyframes marioJumpOut {
+            0% { transform: translateY(15px); }
+            100% { transform: translateY(-32px); }
+        }
+
+        
+        .simon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px;
+            transition: transform 0.4s ease;
+        }
+        .simon-quad { width: 100%; height: 100%; opacity: 0.4; border-radius: 4px;}
+        .q1 { background: #e74c3c; } .q2 { background: #3498db; }
+        .q3 { background: #2ecc71; } .q4 { background: #f1c40f; }
+        .game-card:hover .simon-circle { transform: rotate(90deg); }
+        .game-card:hover .q1 { animation: flash 0.6s infinite alternate 0.1s; }
+        .game-card:hover .q2 { animation: flash 0.6s infinite alternate 0.2s; }
+        .game-card:hover .q3 { animation: flash 0.6s infinite alternate 0.3s; }
+        .game-card:hover .q4 { animation: flash 0.6s infinite alternate 0.4s; }
+        @keyframes flash { to { opacity: 1; filter: brightness(1.3); } }
+
+        
+        .bulls-container { display: flex; gap: 8px; }
+        .bull-peg {
+            width: 14px;
+            height: 14px;
+            background: #fff;
+            border-radius: 50%;
+            transform: translateY(25px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .game-card:hover .bull-peg { transform: translateY(0); opacity: 1; }
+        .game-card:hover .bp1 { transition-delay: 0.05s; background: #e74c3c; }
+        .game-card:hover .bp2 { transition-delay: 0.15s; background: #3498db; }
+        .game-card:hover .bp3 { transition-delay: 0.25s; background: #2ecc71; }
+        .game-card:hover .bp4 { transition-delay: 0.35s; background: #f1c40f; }
+
+        
+        .tetris-shape {
+            width: 36px;
+            height: 36px;
+            position: relative;
+            transform: translateY(-30px) rotate(0deg);
+            transition: transform 0.5s ease-in-out;
+        }
+        .tetris-block {
+            width: 12px; height: 12px; background: #9b59b6; border: 1px solid #fff; position: absolute;
+        }
+        .b1 { top: 0; left: 0; } .b2 { top: 12px; left: 0; } .b3 { top: 24px; left: 0; } .b4 { top: 24px; left: 12px; }
+        .game-card:hover .tetris-shape {
+            transform: translateY(15px) rotate(180deg);
+        }
+
+        
+        .dodge-player {
+            width: 14px; height: 14px; background: #2ecc71; border-radius: 50%;
+            position: absolute; left: 35px; transition: transform 0.4s ease;
+        }
+        .dodge-obstacle {
+            width: 10px; height: 30px; background: #e74c3c; border-radius: 4px;
+            position: absolute; left: 50%; transform: translateX(-50%);
+        }
+        .obs1 { top: 25px; } .obs2 { bottom: 25px; }
+        .game-card:hover .dodge-player {
+            transform: translate(100px, -15px);
+            animation: dodgeSide 0.8s infinite alternate 0.4s;
+        }
+        @keyframes dodgeSide { to { transform: translate(100px, 15px); } }
+        .preview-basket {
+    width: 55px;
+    height: 22px;
+    background: #4a4e69;
+    border-radius: 0 0 15px 15px;
+    border-top: 4px solid #ffd166;
+    position: absolute;
+    bottom: 22px;
+}
+.preview-falling {
+    width: 16px;
+    height: 16px;
+    background: #2ec4b6;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    opacity: 0; 
+}
+
+.game-card:hover .preview-falling {
+    opacity: 1;
+    animation: fallItem 0.9s infinite ease-in;
+}
+
+@keyframes fallItem {
+    0% { transform: translateY(0) scale(0.8); opacity: 0.8; }
+    80% { transform: translateY(58px) scale(1); opacity: 1; }
+    100% { transform: translateY(62px) scale(0.4); opacity: 0; }
+}

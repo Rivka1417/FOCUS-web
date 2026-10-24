@@ -1,0 +1,91 @@
+body {
+            background-color: #1e1e24;
+            color: #f8f8f2;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        
+        .overlay-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.96);
+            color: #4a4e69;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            text-align: center;
+            z-index: 10;
+            max-width: 450px;
+            font-family: system-ui, sans-serif;
+            border: 2px solid #4a7c70;
+        }
+
+        .overlay-card h2 {
+            margin: 0 0 10px 0;
+            color: #4a4e69;
+        }
+
+        .overlay-card p {
+            color: #4a7c70;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            background-image: radial-gradient(#4a7c70, #4a4e69);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+        }
+
+        
+        .code-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 80vh;
+            background: #151518;
+            border-radius: 12px;
+            padding: 20px;
+            overflow-y: hidden;
+            position: relative;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+            direction: ltr; 
+            text-align: left;
+        }
+
+        .code-text {
+            white-space: pre-wrap;
+            line-height: 1.6;
+            color: #a9ffb2;
+            font-size: 1.1rem;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: #fff;
+            animation: blink 0.6s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }

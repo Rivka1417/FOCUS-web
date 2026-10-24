@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> פוקוס - כניסה והרשמה</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel=icon href="../images/לוגועגול.png">
+    <script src="../js/login.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            </div>
+    </header>
+
+    <main class="body">
+        
+        <div id="message-container" class="message-box" style="display: none;"></div>
+
+        <div id="login-section">
+            <h2>התחברות למערכת</h2>
+            <h4>הזן את פרטי המשתמש שלך כדי להיכנס לדף המשחקים</h4>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">שם משתמש:</label>
+                    <input type="text" id="login-username" required placeholder="הקש שם משתמש">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">סיסמה:</label>
+                    <input type="password" id="login-password" required placeholder="הקש סיסמה">
+                </div>
+                <button type="submit" class="btn-submit">התחבר</button>
+            </form>
+            
+            <p class="toggle-text">משתמש חדש? <span id="link-to-register" class="link-action">להרשמה כאן</span></p>
+        </div>
+
+        <div id="register-section" style="display: none;">
+            <h2>הרשמה למערכת</h2>
+            <h4>צור חשבון חדש כדי להתחיל לשחק</h4>
+            
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-username">בחר שם משתמש:</label>
+                    <input type="text" id="register-username" required placeholder="שם משתמש ">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">בחר סיסמה:</label>
+                    <input type="password" id="register-password" required placeholder="לפחות 4 תווים ומספר אחד">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">אימות סיסמא</label>
+                    <input class="check" type="password" id="register-password" required placeholder="הכנס את הסיסמא שבחרת">
+                </div>
+                <button type="submit" class="btn-submit">הירשם כעת</button>
+            </form>
+            
+            <p class="toggle-text">כבר יש לך חשבון? <span id="link-to-login" class="link-action">לחץ להתחברות</span></p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p class="melel">כל הזכויות שמורות לשריתי ורבקה © 2026</p>
+    </footer>
+
+    
+</body>
+</html>

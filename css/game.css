@@ -1,0 +1,382 @@
+:root {
+            --bg-color: #fdfcf0; 
+            --text-color: #4a4e69;
+            --primary-btn: #4a7c70;
+            --cat-inwards: #5b8c85; 
+            --cat-goal: #e67e22; 
+            --cat-sharp: #4a5568; 
+            --cat-smile: #d4ac0d; 
+            --danger: #e74c3c;
+            --success: #2ecc71;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            user-select: none;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            direction: rtl;
+            overflow: hidden;
+            touch-action: none;
+        }
+
+        .main-header {
+            background-color: #fdfcf0;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: solid 1px #4a4e69;
+            z-index: 10;
+            height: 8vh;
+        }
+
+        .logo {
+            background-image: url("../images/logo.png");
+            width: 120px;
+            height: 35px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 4vh;
+        }
+
+        .logout-btn, .exit-btn {
+            background-color: #4a7c70;
+            color: #fdfcf0;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin: 4vh;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover, .exit-btn:hover {
+            background-color: #4a4e69;
+            transform: scale(1.05);
+        }
+
+        .exit-btn {
+            background-color: var(--danger);
+            margin: 0;
+            padding: 6px 15px;
+            font-size: 0.85rem;
+        }
+
+        #app-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: calc(100vh - 12vh);
+        }
+
+        .screen {
+            flex-grow: 1;
+            position: relative;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: var(--bg-color);
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .screen.active {
+            display: flex;
+        }
+
+        #menu-screen {
+            padding: 20px;
+            justify-content: center;
+        }
+
+        #menu-screen h1 {
+            font-size: 26px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #4a4e69;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .category-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .category-btn:active {
+            transform: scale(0.95);
+        }
+
+        .emoji-circle {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 5px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            background-color: #fff;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .emoji-circle img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+        }
+
+        .cat-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #btn-inwards .emoji-circle { border-color: var(--cat-inwards); }
+        #btn-inwards .cat-title { color: var(--cat-inwards); }
+        #btn-goal .emoji-circle { border-color: var(--cat-goal); }
+        #btn-goal .cat-title { color: var(--cat-goal); }
+        #btn-sharp .emoji-circle { border-color: var(--cat-sharp); }
+        #btn-sharp .cat-title { color: var(--cat-sharp); }
+        #btn-smile .emoji-circle { border-color: var(--cat-smile); }
+        #btn-smile .cat-title { color: var(--cat-smile); }
+
+        #game-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 5px;
+            background-color: rgba(253, 252, 240, 0.95);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            z-index: 10;
+        }
+
+        #timer-container {
+            width: 100%;
+            height: 8px;
+            background-color: #e0ded5;
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        #timer-bar {
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-btn);
+            transition: width 0.1s linear, background-color 0.3s;
+        }
+
+        .stat-box {
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            color: #4a4e69;
+        }
+        
+        .stat-value {
+            display: block;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        #mistakes-display {
+            color: var(--danger);
+        }
+
+        #secret-mission {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            background-color: #fff;
+            color: var(--text-color);
+            border-bottom: 2px solid #ccc;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        #sentence-slots {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            direction: rtl;
+        }
+
+        .word-slot {
+            border-bottom: 3px solid #ccc;
+            min-width: 35px;
+            height: 25px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.3s ease;
+            padding: 0 5px;
+            line-height: 25px;
+        }
+
+        #game-area {
+            position: relative;
+            flex-grow: 1;
+            width: 100%;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        #basket {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 45px;
+            background-color: #4a4e69;
+            border-radius: 10px 10px 30px 30px;
+            border-top: 6px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+        
+        .basket-correct { border-top-color: var(--success) !important; background-color: #4a7c70 !important;}
+        .basket-wrong { border-top-color: var(--danger) !important; background-color: #333 !important;}
+
+        .falling-object {
+            position: absolute;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: opacity 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .falling-word {
+            padding: 8px 18px;
+            background-color: #fff;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            white-space: nowrap;
+        }
+
+        .falling-emoji {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 3px solid #ccc;
+            overflow: hidden;
+        }
+
+        .falling-emoji img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        #end-screen {
+            padding: 30px 20px;
+            justify-content: center;
+        }
+        #end-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        #final-score {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        #user-stats-display {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #4a4e69;
+            font-weight: bold;
+        }
+        #end-message {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #555;
+            white-space: pre-wrap;
+        }
+        .restart-buttons-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .restart-btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: var(--primary-btn);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: background-color 0.2s;
+        }
+        .restart-btn:hover {
+            background-color: #4a4e69;
+        }
+        .lobby-btn {
+            background-color: #4a4e69;
+        }
+        .lobby-btn:hover {
+            background-color: var(--primary-btn);
+        }
+
+        footer {
+            text-align: center;
+            background-color: #4a4e69;
+            border-top: solid 1px #4a4e69;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 4vh;
+        }
+
+        .melel {
+            font-size: 10pt;
+            color: #fdfcf0;
+        }

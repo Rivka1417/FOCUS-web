@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>תופסים השראה - פוקוס</title>
+    <link rel="stylesheet" href="../css/login.css">
+     <link rel=icon href="../images/לוגועגול.png">
+    <link rel="stylesheet" href="../css/game.css">
+    <script src="../js/game.js" defer></script>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo"></div>
+    <a href="../html/login.html" class="logout-btn">
+        <span>התנתקות</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+    </a>
+</header>
+
+<div id="app-container">
+    
+    <div id="menu-screen" class="screen active">
+        <h1>בחר קטגוריה למשחק:</h1>
+        <div class="categories-grid">
+            <div class="category-btn" id="btn-inwards" onclick="startGame('inwards')">
+                <div class="emoji-circle">
+                    <img src="../images/חחנון.gif" alt="פוקוס פנימה"> 
+                </div>
+                <span class="cat-title">פוקוס פנימה</span>
+            </div>
+            <div class="category-btn" id="btn-goal" onclick="startGame('goal')">
+                <div class="emoji-circle">
+                    <img src="../images/ככוכב.gif" alt="פוקוס על המטרה"> 
+                </div>
+                <span class="cat-title">פוקוס על המטרה</span>
+            </div>
+            <div class="category-btn" id="btn-sharp" onclick="startGame('sharp')">
+                <div class="emoji-circle">
+                    <img src="../images/קקורץ.gif" alt="פוקוס חד"> 
+                </div>
+                <span class="cat-title">פוקוס חד</span>
+            </div>
+            <div class="category-btn" id="btn-smile" onclick="startGame('smile')">
+                <div class="emoji-circle">
+                    <img src="../images/צצוחק.gif" alt="פוקוס על החיוך"> 
+                </div>
+                <span class="cat-title">פוקוס על החיוך</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div id="game-header">
+            <div class="stat-box">ניקוד <span class="stat-value" id="score-display" style="color: #4a7c70;">0</span></div>
+            <div class="stat-box">התקדמות המשפט <span class="stat-value" id="progress-display">0/0</span></div>
+            <div class="stat-box">פסילות <span class="stat-value" id="mistakes-display">0/10</span></div>
+            <div class="stat-box"><button class="exit-btn" onclick="showMenu()">יציאה לקטגוריות</button></div>
+        </div>
+        <div id="timer-container">
+            <div id="timer-bar"></div>
+        </div>
+        <div id="secret-mission">
+            המשימה: תפוס את כל המילים שמרכיבות את המשפט הסודי שלך!
+            <div id="sentence-slots"></div>
+        </div>
+        <div id="game-area">
+            <div id="basket">מגנט השראה</div>
+        </div>
+    </div>
+
+    <div id="end-screen" class="screen">
+        <h2 id="end-title">המשחק הסתיים!</h2>
+        <div id="end-message"></div>
+        <div id="final-score">ניקוד: 0</div>
+        <div id="user-stats-display">נצחונות: 0 | כשלונות: 0</div>
+        <div class="restart-buttons-container">
+            <button class="restart-btn" onclick="playAgain()">שחק שוב</button>
+            <button class="restart-btn lobby-btn" onclick="goToLobby()">חזרה ללובי</button>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p class="melel">כל הזכויות שמורות לשריתי ורבקה © 2026</p>
+</footer>
+
+
+</body>
+</html>
